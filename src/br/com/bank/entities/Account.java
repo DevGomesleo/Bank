@@ -5,16 +5,16 @@ public class Account {
 	
 	private String name;
 	private Integer numberAccount;
-	private Double amount;
+	private double amount;
 	
 	public Account(String name, Integer numberAccount) {
 		this.name = name;
 		this.numberAccount = numberAccount;
 	}
-	public Account(String name, Integer numberAccount, Double amount) {
+	public Account(String name, Integer numberAccount, double deposit) {
 		this.name = name;
 		this.numberAccount = numberAccount;
-		deposit(amount);//Option: Initial deposit 
+		deposit(deposit);//Option: Initial deposit 
 	}
 	
 	public String getName() {
@@ -29,14 +29,14 @@ public class Account {
 	public Double getAmount() {
 		return amount;
 	}
-	public void deposit(Double amount) {
-		this.amount += amount;
+	public void deposit(double deposit) {
+		this.amount += deposit;
 	}
-	public void withdraw(Double amount) {
+	public void withdraw(double amount) {
 		this.amount -= amount;
 	}
 	
 	public String toString() {
-		return String.format("%d, %s, $%.2f\n", numberAccount, name, amount);
+		return String.format("\nNumber Account: %d\nHolder: %s\nAmount: $%.2f\n", numberAccount, name, amount);
 	}
 }
