@@ -11,6 +11,7 @@ public class Program {
 		Scanner input = new Scanner(System.in);
 		Locale.setDefault(Locale.US);
 		Account account1;
+		double deposit;
 		
 		System.out.print("Enter number account: ");
 		Integer accountNumber = input.nextInt();
@@ -27,7 +28,7 @@ public class Program {
 		if(choice.length() >= 1 && Character.toLowerCase(choice.charAt(0)) == 'y') { 
 			
 			System.out.print("Enter a initial deposit value $: ");
-			double deposit = input.nextDouble();
+			 deposit = input.nextDouble();
 			account1 = new Account(name,accountNumber, deposit);
 			
 		}else {
@@ -35,8 +36,23 @@ public class Program {
 			account1 = new Account(name, accountNumber);
 		}
 		
+		
+		System.out.printf("\nHolder Data:\n");
 		System.out.println(account1);
 		
+		System.out.printf("\nDeposit an amount value $: ");
+		deposit = input.nextDouble();
+		account1.deposit(deposit);
+		
+		System.out.printf("\nUpdated holder data:\n");
+		System.out.print(account1);
+		
+		System.out.printf("\nWithdraw an amount value $: ");
+		deposit = input.nextDouble();
+		account1.withdraw(deposit);
+		
+		System.out.printf("\nUpdated holder data:\n");
+		System.out.print(account1);
 
 	}
 

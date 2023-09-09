@@ -33,10 +33,10 @@ public class Account {
 		this.amount += deposit;
 	}
 	public void withdraw(double amount) {
-		this.amount -= amount;
+		this.amount -= (amount+5.0); // tax $ 5.00
 	}
 	
 	public String toString() {
-		return String.format("\nNumber Account: %d\nHolder: %s\nAmount: $%.2f\n", numberAccount, name, amount);
+		return String.format("Number Account: %d\nHolder: %s\nAmount: $%.2f\n", numberAccount, name, amount);
 	}
 }
